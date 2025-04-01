@@ -3,20 +3,20 @@
 -----
 
 # Executive Summary
-
+----
 The present solution is meant for providing levarage between cloud infrastructure scalability and on-premises control of sensitive data. A site-to-site VPN was established in order to encrypt the communication
 between the two segments of the built architecture, where both can communicate efficiently, reliably and in a secure manner, as if both environmens would be in the same local area network. The solution provides a nice degree of flexibility due to its hybrid architecture and on top of that, is meant to be improved for the future.
-----
-### For the full network configurations and implementation guide see the full guid pdf: 
+
+### For the full network configurations and implementation guide see the full guide pdf: 
 ----
 # Architecture
 
 ![image](https://github.com/user-attachments/assets/45bb6ccc-9af7-4f27-b1ae-050b5f27b9a9)
 
 
-As it is in the shown architecture diagram above, the architecture is divided into two main segments, the on-premises architecture and the cloud infrastructure handled by AWS.
+As it is in the shown architecture diagram above, the architecture is divided into two main segments, the on-premises architecture and the cloud infrastructure handled by AWS and the VPN connection is what establishes the encrypted communication between them.
 
-## The architecture is composed of the following main components
+# The architecture is composed of the following main components
 -----
 
 ### On Premises Network (VirtualBox)
@@ -43,6 +43,20 @@ As it is in the shown architecture diagram above, the architecture is divided in
    * A site-to-site VPN tunnel that securely connects the the Virtual Private Gateway (AWS) with the on-premises Customer Gateway (pfSense). It uses static routing to allow the traffic between the VPC and the on-premises network.
 6. Route table
    * The route table associated with the private subnets and is used to keep track of the paths and determines which way to forward the traffic (what gateways to use) is configured to send all traffic destined to the on-prem network IP through the Virtual Private Gateway, to provide proper routing across the VPN tunnel.
+
+
+# Architecture Comparison
+
+| Feature / Criteria         | On-Premises                     | Cloud                                | Hybrid                                  |
+|---------------------------|----------------------------------|--------------------------------------|------------------------------------------|
+| **Infrastructure**        | Hosted locally                  | Hosted by cloud provider             | Mix of local and cloud                  |
+| **Cost**                  | High upfront cost               | Pay as you go                        | Balanced cost model                     |
+| **Scalability**           | Limited by hardware             | Highly scalable on demand            | Scalable with more complexity           |
+| **Control**               | Full control                    | Limited control                      | Partial control                         |
+| **Security**              | Fully managed internally        | Managed by provider                  | Shared responsibility                   |
+| **Deployment Speed**      | Slower due to setup time        | Fast deployment                      | Moderate                                |
+| **Maintenance**           | Handled in-house                | Handled by provider                  | Shared responsibility                   |
+
 
 
 ## Reason of The Chosen Architecture
