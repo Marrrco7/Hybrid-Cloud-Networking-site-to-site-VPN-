@@ -29,4 +29,15 @@ As it is in the shown architecture diagram above, the architecture is divided in
 3. WAN interface
    * This network configured in pfSense via a bridge adapter, meaning it gets its own private IP address from the home router as if it was one more device in the newtork. It also acts as the public endpoint 
      (Customer Gateway) for the VPN tunnel.
+     
+### Cloud Environment (AWS)
+1. VPC
+   * The Virtual Private Cloud is an isolated network hosted by AWS that hosts all the cloud infrastructure where we can design and deploy our cloud network.
+2. Private Subnets
+   * The two private subnets are a logical subdivision of the cloud network, bounded by CIDR ranges, that are designed to host resources such as EC2 instances, and are only accessible troughout the VPN and not exposed to the internet. They provide security by isolating resoruces, and network better network management by improving network congestion and overall routing more efficient.
+3. Customer Gateway (CGW)
+   * The customer gateway is a representation of the on-premises pfSense firewall within AWS. It is defined by using the public IP of pfSense address of pfSense's WAN interface, which is the same as the public network IP.
+4. Virtual Private Gateway (VPW)
+   * AWS' managed concentrator (meaning it can connect to multiple VPN's) which is attached to the VPC and serves as the AWS endpoint for the VPN connection.
+5. VPN connection
 
