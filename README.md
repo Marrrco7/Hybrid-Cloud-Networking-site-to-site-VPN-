@@ -40,4 +40,7 @@ As it is in the shown architecture diagram above, the architecture is divided in
 4. Virtual Private Gateway (VPW)
    * AWS' managed concentrator (meaning it can connect to multiple VPN's) which is attached to the VPC and serves as the AWS endpoint for the VPN connection.
 5. VPN connection
+   * A site-to-site VPN tunnel that securely connects the the Virtual Private Gateway (AWS) with the on-premises Customer Gateway (pfSense). It uses static routing to allow the traffic between the VPC and the on-premises network.
+6. Route table
+   * The route table associated with the private subnets and is used to keep track of the paths and determines which way to forward the traffic (what gateways to use) is configured to send all traffic destined to the on-prem network IP through the Virtual Private Gateway, to provide proper routing across the VPN tunnel.
 
