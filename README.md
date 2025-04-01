@@ -9,3 +9,9 @@ between the two segments of the built architecture, where both can communicate e
 
 
 
+## Architecture
+
+![image](https://github.com/user-attachments/assets/45bb6ccc-9af7-4f27-b1ae-050b5f27b9a9)
+
+
+As it is in the shown architecture diagram above, the architecture is divided into two main segments, the on-premises architecture and the cloud infrastructure handled by AWS.
