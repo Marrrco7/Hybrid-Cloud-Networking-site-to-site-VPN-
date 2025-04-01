@@ -46,6 +46,7 @@ As it is in the shown architecture diagram above, the architecture is divided in
 
 
 ## Reason of The Chosen Architecture
+---
 This architecture was chosen to provide cost efficiency, data locality, and scalability, allowing to keep sensitive workloads on-premises while expanding compute or storage in the cloud as needed. All without exposing services to the public internet.
 It allow us to test cloud services without full migration. Moreover it provides the cost control while allowing to keep sensitive workload locally. 
 
