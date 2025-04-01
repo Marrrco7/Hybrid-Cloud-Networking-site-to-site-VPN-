@@ -44,3 +44,8 @@ As it is in the shown architecture diagram above, the architecture is divided in
 6. Route table
    * The route table associated with the private subnets and is used to keep track of the paths and determines which way to forward the traffic (what gateways to use) is configured to send all traffic destined to the on-prem network IP through the Virtual Private Gateway, to provide proper routing across the VPN tunnel.
 
+
+## Reason of The Chosen Architecture
+This architecture was chosen to provide cost efficiency, data locality, and scalability, allowing to keep sensitive workloads on-premises while expanding compute or storage in the cloud as needed. All without exposing services to the public internet.
+It allow us to test cloud services without full migration. Moreover it provides the cost control while allowing to keep sensitive workload locally. 
+
